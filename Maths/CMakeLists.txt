@@ -5,7 +5,21 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(Maths STATIC
-    src/Maths.cpp
+    src/diagonalMatrix.cpp
+    src/identityMatrix.cpp
+    src/invertedProjectionMatrix.cpp
+    src/matrix4x4.cpp
+    src/projectionMatrix.cpp
+    src/quaternion.cpp
+    src/rotationMatrix.cpp
+    src/rotationXMatrix.cpp
+    src/rotationYMatrix.cpp
+    src/rotationZMatrix.cpp
+    src/scaleMatrix.cpp
+    src/stereoscopicProjectionMatrix.cpp
+    src/translationMatrix.cpp
+    src/vector3.cpp
+    src/vector4.cpp
 )
 
 target_include_directories(Maths
