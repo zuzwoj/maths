@@ -21,6 +21,12 @@ public:
 	friend Vector4 operator*(Matrix4x4 lhs, const Vector4& rhs);
 };
 
+class DiagonalMatrix : public Matrix4x4
+{
+public:
+	DiagonalMatrix(double a0, double a1, double a2, double a3);
+};
+
 class IdentityMatrix : public DiagonalMatrix
 {
 public:
@@ -37,12 +43,6 @@ class TranslationMatrix : public Matrix4x4
 {
 public:
 	TranslationMatrix(double tx, double ty, double tz);
-};
-
-class DiagonalMatrix : public Matrix4x4
-{
-public:
-	DiagonalMatrix(double a0, double a1, double a2, double a3);
 };
 
 class ScaleMatrix : public DiagonalMatrix
