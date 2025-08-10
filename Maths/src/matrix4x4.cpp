@@ -42,25 +42,24 @@ void Matrix4x4::transpose()
 
 void Matrix4x4::toArray(double* out)
 {
-	out[0] = elems[0][0];
-	out[1] = elems[0][1];
-	out[2] = elems[0][2];
-	out[3] = elems[0][3];
+	for (int i = 0; i < 4; ++i) 
+	{
+		for (int j = 0; j < 4; ++j)
+		{
+			out[i * 4 + j] = elems[i][j];
+		}
+	}
+}
 
-	out[4] = elems[1][0];
-	out[5] = elems[1][1];
-	out[6] = elems[1][2];
-	out[7] = elems[1][3];
-
-	out[8] = elems[2][0];
-	out[9] = elems[2][1];
-	out[10] = elems[2][2];
-	out[11] = elems[2][3];
-
-	out[12] = elems[3][0];
-	out[13] = elems[3][1];
-	out[14] = elems[3][2];
-	out[15] = elems[3][3];
+void Matrix4x4::toFloatArray(float* out)
+{
+	for (int i = 0; i < 4; ++i)
+	{
+		for (int j = 0; j < 4; ++j)
+		{
+			out[i * 4 + j] = (float)elems[i][j];
+		}
+	}
 }
 
 Matrix4x4 operator*(Matrix4x4 lhs, const Matrix4x4& rhs)
