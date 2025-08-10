@@ -40,27 +40,27 @@ void Matrix4x4::transpose()
 	std::swap(elems[2][3], elems[3][2]);
 }
 
-void Matrix4x4::toArray(float* out)
+void Matrix4x4::toArray(double* out)
 {
-	out[0] = (float)elems[0][0];
-	out[1] = (float)elems[0][1];
-	out[2] = (float)elems[0][2];
-	out[3] = (float)elems[0][3];
+	out[0] = elems[0][0];
+	out[1] = elems[0][1];
+	out[2] = elems[0][2];
+	out[3] = elems[0][3];
 
-	out[4] = (float)elems[1][0];
-	out[5] = (float)elems[1][1];
-	out[6] = (float)elems[1][2];
-	out[7] = (float)elems[1][3];
+	out[4] = elems[1][0];
+	out[5] = elems[1][1];
+	out[6] = elems[1][2];
+	out[7] = elems[1][3];
 
-	out[8] = (float)elems[2][0];
-	out[9] = (float)elems[2][1];
-	out[10] = (float)elems[2][2];
-	out[11] = (float)elems[2][3];
+	out[8] = elems[2][0];
+	out[9] = elems[2][1];
+	out[10] = elems[2][2];
+	out[11] = elems[2][3];
 
-	out[12] = (float)elems[3][0];
-	out[13] = (float)elems[3][1];
-	out[14] = (float)elems[3][2];
-	out[15] = (float)elems[3][3];
+	out[12] = elems[3][0];
+	out[13] = elems[3][1];
+	out[14] = elems[3][2];
+	out[15] = elems[3][3];
 }
 
 Matrix4x4 operator*(Matrix4x4 lhs, const Matrix4x4& rhs)

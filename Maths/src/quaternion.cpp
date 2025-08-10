@@ -17,7 +17,7 @@ void Quaternion::normalize()
 	}
 }
 
-Quaternion::Quaternion(Vector3 rotationAxis, float rotationAngle)
+Quaternion::Quaternion(Vector3 rotationAxis, double rotationAngle)
 {
 	this->w = cos(rotationAngle / 2);
 	this->x = rotationAxis.x * sin(rotationAngle / 2);

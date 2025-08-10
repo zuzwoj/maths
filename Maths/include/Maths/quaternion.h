@@ -11,7 +11,7 @@ private:
 	void normalize();
 
 public:
-	Quaternion(Vector3 rotationAxis, float rotationAngle);
+	Quaternion(Vector3 rotationAxis, double rotationAngle);
 	Quaternion(Vector4 wxyz);
 
 	double getW() { return w; }

@@ -15,7 +15,7 @@ public:
 	Matrix4x4();
 
 	void transpose();
-	void toArray(float* out);
+	void toArray(double* out);
 
 	friend Matrix4x4 operator*(Matrix4x4 lhs, const Matrix4x4& rhs);
 	friend Vector4 operator*(Matrix4x4 lhs, const Vector4& rhs);
