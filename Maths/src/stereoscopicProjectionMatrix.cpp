@@ -6,7 +6,7 @@ StereoscopicProjectionMatrix::StereoscopicProjectionMatrix(double fov, double as
 	double bottom = -top;
 	double shift = I * near / C;
 	double right = top * aspect + shift;
-	double left = -right + shift;
+	double left = -top * aspect + shift;
 
 	elems[0][0] = 2 * near / (right - left);
 	elems[1][0] = 0.0f;
