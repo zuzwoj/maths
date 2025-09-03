@@ -3,7 +3,7 @@
 A simple C++ library created primarily for usage with OpenGL.
 
 ## Features
-- 3D and 4D vectors
+- 2D, 3D and 4D vectors
 - 4x4 matrices
 - quaternions
 

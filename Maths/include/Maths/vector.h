@@ -1,6 +1,28 @@
 #pragma once
 #include <cmath>
 
+class Vector2
+{
+	double x;
+	double y;
+
+	Vector2(double x, double y);
+	Vector2();
+
+	double len() const;
+	void normalize();
+
+	Vector2 operator-();
+	Vector2& operator+=(const Vector2& rhs);
+	Vector2& operator-=(const Vector2& rhs);
+	friend Vector2 operator+(Vector2 lhs, const Vector2& rhs);
+	friend Vector2 operator-(Vector2 lhs, const Vector2& rhs);
+	friend Vector2 operator*(double lhs, const Vector2& rhs);
+	friend Vector2 operator*(Vector2 lhs, const double& rhs);
+	friend Vector2 operator/(Vector2 lhs, const double& rhs);
+	friend double operator*(Vector2 lhs, const Vector2& rhs);
+};
+
 class Vector3
 {
 public:
