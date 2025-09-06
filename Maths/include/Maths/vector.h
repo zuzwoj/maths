@@ -1,30 +1,60 @@
 #pragma once
 #include <cmath>
 
-class Vector2
+class Vector3;
+class Vector4;
+
+class Vector
+{
+public:
+	virtual double len() const = 0;
+	virtual void normalize() = 0;
+};
+
+class Vector2 : public Vector
 {
 public:
 	double x;
 	double y;
 
 	Vector2(double x, double y);
+	Vector2(Vector3 v);
 	Vector2();
 
-	double len() const;
-	void normalize();
+	double len() const override;
+	void normalize() override;
 
+	// negation
 	Vector2 operator-();
+
+	// vector addition
 	Vector2& operator+=(const Vector2& rhs);
 	Vector2& operator-=(const Vector2& rhs);
 	friend Vector2 operator+(Vector2 lhs, const Vector2& rhs);
 	friend Vector2 operator-(Vector2 lhs, const Vector2& rhs);
+
+	// manipulation by double
+	// addition
+	Vector2& operator+=(const double& rhs);
+	friend Vector2 operator+(Vector2 lhs, const double& rhs);
+	friend Vector2 operator+(double lhs, const Vector2& rhs);
+	// subtraction
+	Vector2& operator-=(const double& rhs);
+	friend Vector2 operator-(Vector2 lhs, const double& rhs);
+	friend Vector2 operator-(double lhs, const Vector2& rhs);
+	// multiplication
+	Vector2& operator*=(const double& rhs);
 	friend Vector2 operator*(double lhs, const Vector2& rhs);
 	friend Vector2 operator*(Vector2 lhs, const double& rhs);
+	// division
+	Vector2& operator/=(const double& rhs);
 	friend Vector2 operator/(Vector2 lhs, const double& rhs);
+	
+	// dot product
 	friend double operator*(Vector2 lhs, const Vector2& rhs);
 };
 
-class Vector3
+class Vector3 : public Vector
 {
 public:
 	double x;
@@ -32,24 +62,45 @@ public:
 	double z;
 
 	Vector3(double x, double y, double z);
+	Vector3(Vector2 v);
+	Vector3(Vector4 v);
 	Vector3();
 
-	double len() const;
-	void normalize();
+	double len() const override;
+	void normalize() override;
 	Vector3 crossProduct(Vector3 rhs);
 
+	// negation
 	Vector3 operator-();
+
+	//vector addition
 	Vector3& operator+=(const Vector3& rhs);
 	Vector3& operator-=(const Vector3& rhs);
 	friend Vector3 operator+(Vector3 lhs, const Vector3& rhs);
 	friend Vector3 operator-(Vector3 lhs, const Vector3& rhs);
+
+	// manipulation by double
+	// addition
+	Vector3& operator+=(const double& rhs);
+	friend Vector3 operator+(Vector3 lhs, const double& rhs);
+	friend Vector3 operator+(double lhs, const Vector3& rhs);
+	// subtraction
+	Vector3& operator-=(const double& rhs);
+	friend Vector3 operator-(Vector3 lhs, const double& rhs);
+	friend Vector3 operator-(double lhs, const Vector3& rhs);
+	// multuplication
+	Vector3& operator*=(const double& rhs);
 	friend Vector3 operator*(double lhs, const Vector3& rhs);
 	friend Vector3 operator*(Vector3 lhs, const double& rhs);
+	// division
+	Vector3& operator/=(const double& rhs);
 	friend Vector3 operator/(Vector3 lhs, const double& rhs);
+
+	// dot product
 	friend double operator*(Vector3 lhs, const Vector3& rhs);
 };
 
-class Vector4
+class Vector4 : public Vector
 {
 public:
 	double x;
@@ -59,17 +110,37 @@ public:
 
 	Vector4(double x, double y, double z, double t);
 	Vector4(Vector3 v);
+	Vector4();
 
-	double len() const;
-	void normalize();
+	double len() const override;
+	void normalize() override;
 
+	// negation
 	Vector4 operator-();
+
+	// vector addition
 	Vector4& operator+=(const Vector4& rhs);
 	Vector4& operator-=(const Vector4& rhs);
 	friend Vector4 operator+(Vector4 lhs, const Vector4& rhs);
 	friend Vector4 operator-(Vector4 lhs, const Vector4& rhs);
+
+	// manipulation by double
+	// addition
+	Vector4& operator+=(const double& rhs);
+	friend Vector4 operator+(Vector4 lhs, const double& rhs);
+	friend Vector4 operator+(double lhs, const Vector4& rhs);
+	// subtraction
+	Vector4& operator-=(const double& rhs);
+	friend Vector4 operator-(Vector4 lhs, const double& rhs);
+	friend Vector4 operator-(double lhs, const Vector4& rhs);
+	// multuplication
+	Vector4& operator*=(const double& rhs);
 	friend Vector4 operator*(double lhs, const Vector4& rhs);
 	friend Vector4 operator*(Vector4 lhs, const double& rhs);
+	// division
+	Vector4& operator/=(const double& rhs);
 	friend Vector4 operator/(Vector4 lhs, const double& rhs);
+
+	// dot product
 	friend double operator*(Vector4 lhs, const Vector4& rhs);
 };

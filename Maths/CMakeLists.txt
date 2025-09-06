@@ -18,9 +18,9 @@ add_library(Maths STATIC
     src/scaleMatrix.cpp
     src/stereoscopicProjectionMatrix.cpp
     src/translationMatrix.cpp
+    src/vector2.cpp
     src/vector3.cpp
-    src/vector4.cpp
- "src/vector2.cpp")
+    src/vector4.cpp)
 
 target_include_directories(Maths
     PUBLIC

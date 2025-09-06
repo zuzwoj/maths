@@ -1,5 +1,8 @@
 #include "Maths/vector.h"
 
+/****************************************************
+* CONSTRUCTORS
+****************************************************/
 Vector3::Vector3(double x, double y, double z)
 {
 	this->x = x;
@@ -7,13 +10,30 @@ Vector3::Vector3(double x, double y, double z)
 	this->z = z;
 }
 
-Vector3::Vector3()
-{
-	this->x = 0;
-	this->y = 0;
-	this->z = 0;
+Vector3::Vector3(Vector2 v)
+{ 
+	this->x = v.x;
+	this->y = v.y;
+	this->z = 0.0f;
 }
 
+Vector3::Vector3(Vector4 v)
+{ 
+	this->x = v.x;
+	this->y = v.y;
+	this->z = v.z;
+}
+
+Vector3::Vector3()
+{
+	this->x = 0.0f;
+	this->y = 0.0f;
+	this->z = 0.0f;
+}
+
+/****************************************************
+* VECTOR INTERFACE FUNCTIONS
+****************************************************/
 double Vector3::len() const
 {
 	return sqrt(x * x + y * y + z * z);
@@ -35,11 +55,17 @@ Vector3 Vector3::crossProduct(Vector3 rhs)
 	return Vector3(y * rhs.z - z * rhs.y, z * rhs.x - x * rhs.z, x * rhs.y - y * rhs.x);
 }
 
+/****************************************************
+* NEGATION
+****************************************************/
 Vector3 Vector3::operator-()
 {
 	return Vector3(-x, -y, -z);
 }
 
+/****************************************************
+* VECTOR ADDITION
+****************************************************/
 Vector3& Vector3::operator+=(const Vector3& rhs)
 {
 	this->x += rhs.x;
@@ -72,6 +98,53 @@ Vector3 operator-(Vector3 lhs, const Vector3& rhs)
 	return lhs;
 }
 
+/****************************************************
+* MANIPULATION BY DOUBLE
+****************************************************/
+Vector3& Vector3::operator+=(const double& rhs)
+{
+	x += rhs;
+	y += rhs;
+	z += rhs;
+	return *this;
+}
+
+Vector3 operator+(Vector3 lhs, const double& rhs)
+{
+	return Vector3(lhs.x + rhs, lhs.y + rhs, lhs.z + rhs);
+}
+
+Vector3 operator+(double lhs, const Vector3& rhs)
+{
+	return Vector3(lhs + rhs.x, lhs + rhs.y, lhs + rhs.z);
+}
+
+Vector3& Vector3::operator-=(const double& rhs)
+{
+	x -= rhs;
+	y -= rhs;
+	z -= rhs;
+	return *this;
+}
+
+Vector3 operator-(Vector3 lhs, const double& rhs)
+{
+	return Vector3(lhs.x - rhs, lhs.y - rhs, lhs.z - rhs);
+}
+
+Vector3 operator-(double lhs, const Vector3& rhs)
+{
+	return Vector3(lhs - rhs.x, lhs - rhs.y, lhs - rhs.z);
+}
+
+Vector3& Vector3::operator*=(const double& rhs)
+{
+	x *= rhs;
+	y *= rhs;
+	z *= rhs;
+	return *this;
+}
+
 Vector3 operator*(double lhs, const Vector3& rhs)
 {
 	return Vector3(rhs.x * lhs, rhs.y * lhs, rhs.z * lhs);
@@ -82,11 +155,22 @@ Vector3 operator*(Vector3 lhs, const double& rhs)
 	return Vector3(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs);
 }
 
+Vector3& Vector3::operator/=(const double& rhs)
+{
+	x /= rhs;
+	y /= rhs;
+	z /= rhs;
+	return *this;
+}
+
 Vector3 operator/(Vector3 lhs, const double& rhs)
 {
 	return Vector3(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs);
 }
 
+/****************************************************
+* DOT PRODUCT
+****************************************************/
 double operator*(Vector3 lhs, const Vector3& rhs)
 {
 	return lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z;
