@@ -25,12 +25,12 @@ Quaternion::Quaternion(Vector3 rotationAxis, double rotationAngle)
 	this->z = rotationAxis.z * sin(rotationAngle / 2);
 }
 
-Quaternion::Quaternion(Vector4 xyzt)
+Quaternion::Quaternion(Vector4 xyzw)
 {
-	this->w = xyzt.t;
-	this->x = xyzt.x;
-	this->y = xyzt.y;
-	this->z = xyzt.z;
+	this->w = xyzw.t;
+	this->x = xyzw.x;
+	this->y = xyzw.y;
+	this->z = xyzw.z;
 }
 
 Matrix4x4 Quaternion::getRotationMatrix()

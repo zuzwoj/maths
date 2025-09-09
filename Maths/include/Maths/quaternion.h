@@ -12,7 +12,7 @@ private:
 
 public:
 	Quaternion(Vector3 rotationAxis, double rotationAngle);
-	Quaternion(Vector4 wxyz);
+	Quaternion(Vector4 xyzw);
 
 	double getW() { return w; }
 	double getX() { return x; }
