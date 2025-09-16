@@ -62,6 +62,17 @@ void Matrix4x4::toFloatArray(float* out)
 	}
 }
 
+void Matrix4x4::override(Matrix4x4 source)
+{
+	for (int i = 0; i < 4; ++i)
+	{
+		for (int j = 0; j < 4; ++j)
+		{
+			elems[i][j] = source.elems[i][j];
+		}
+	}
+}
+
 Matrix4x4 operator*(Matrix4x4 lhs, const Matrix4x4& rhs)
 {
 	Matrix4x4 result = Matrix4x4();

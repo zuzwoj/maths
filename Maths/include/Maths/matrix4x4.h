@@ -17,6 +17,7 @@ public:
 	void transpose();
 	void toArray(double* out);
 	void toFloatArray(float* out);
+	void override(Matrix4x4 source);
 
 	friend Matrix4x4 operator*(Matrix4x4 lhs, const Matrix4x4& rhs);
 	friend Vector4 operator*(Matrix4x4 lhs, const Vector4& rhs);
