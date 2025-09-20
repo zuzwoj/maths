@@ -50,6 +50,13 @@ void Vector3::normalize()
 	}
 }
 
+void Vector3::override(Vector3 v)
+{
+	x = v.x;
+	y = v.y;
+	z = v.z;
+}
+
 Vector3 Vector3::crossProduct(Vector3 rhs)
 {
 	return Vector3(y * rhs.z - z * rhs.y, z * rhs.x - x * rhs.z, x * rhs.y - y * rhs.x);

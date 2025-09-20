@@ -1,5 +1,21 @@
 #include "Maths/quaternion.h"
 
+Quaternion::Quaternion(Vector3 rotationAxis, double rotationAngle)
+{
+	this->w = cos(rotationAngle / 2);
+	this->x = rotationAxis.x * sin(rotationAngle / 2);
+	this->y = rotationAxis.y * sin(rotationAngle / 2);
+	this->z = rotationAxis.z * sin(rotationAngle / 2);
+}
+
+Quaternion::Quaternion(Vector4 xyzw)
+{
+	this->w = xyzw.t;
+	this->x = xyzw.x;
+	this->y = xyzw.y;
+	this->z = xyzw.z;
+}
+
 double Quaternion::len() const
 {
 	return sqrt(x * x + y * y + z * z + w * w);
@@ -16,21 +32,12 @@ void Quaternion::normalize()
 		z /= l;
 	}
 }
-
-Quaternion::Quaternion(Vector3 rotationAxis, double rotationAngle)
+void Quaternion::override(Quaternion q)
 {
-	this->w = cos(rotationAngle / 2);
-	this->x = rotationAxis.x * sin(rotationAngle / 2);
-	this->y = rotationAxis.y * sin(rotationAngle / 2);
-	this->z = rotationAxis.z * sin(rotationAngle / 2);
-}
-
-Quaternion::Quaternion(Vector4 xyzw)
-{
-	this->w = xyzw.t;
-	this->x = xyzw.x;
-	this->y = xyzw.y;
-	this->z = xyzw.z;
+	x = q.x;
+	y = q.y;
+	z = q.z;
+	w = q.w;
 }
 
 Matrix4x4 Quaternion::getRotationMatrix()

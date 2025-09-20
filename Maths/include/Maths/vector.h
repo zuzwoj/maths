@@ -23,6 +23,7 @@ public:
 
 	double len() const override;
 	void normalize() override;
+	void override(Vector2 v);
 
 	// negation
 	Vector2 operator-();
@@ -68,6 +69,7 @@ public:
 
 	double len() const override;
 	void normalize() override;
+	void override(Vector3 v);
 	Vector3 crossProduct(Vector3 rhs);
 
 	// negation
@@ -114,6 +116,7 @@ public:
 
 	double len() const override;
 	void normalize() override;
+	void override(Vector4 v);
 
 	// negation
 	Vector4 operator-();

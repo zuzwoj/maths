@@ -9,6 +9,7 @@ private:
 
 	double len() const;
 	void normalize();
+	void override(Quaternion q);
 
 public:
 	Quaternion(Vector3 rotationAxis, double rotationAngle);
