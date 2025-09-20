@@ -3,23 +3,9 @@
 /****************************************************
 * CONSTRUCTORS
 ****************************************************/
-Vector2::Vector2(double x, double y)
-{
-	this->x = x;
-	this->y = y;
-}
-
-Vector2::Vector2(Vector3 v)
-{
-	this->x = v.x;
-	this->y = v.y;
-}
-
-Vector2::Vector2()
-{
-	this->x = 0.0f;
-	this->y = 0.0f;
-}
+constexpr Vector2::Vector2(double x, double y) : x(x), y(y) {}
+constexpr Vector2::Vector2(Vector3& v) : x(v.x), y(v.y) {}
+constexpr Vector2::Vector2() : x(0.0f), y(0.0f) {}
 
 /****************************************************
 * VECTOR INTERFACE FUNCTIONS

@@ -1,9 +1,5 @@
 #include "Maths/quaternion.h"
 
-const Vector3 Quaternion::X_AXIS = Vector3(1.0f, 0.0f, 0.0f);
-const Vector3 Quaternion::Y_AXIS = Vector3(0.0f, 1.0f, 0.0f);
-const Vector3 Quaternion::Z_AXIS = Vector3(0.0f, 0.0f, 1.0f);
-
 Quaternion::Quaternion(Vector3 rotationAxis, double rotationAngle)
 {
 	this->w = cos(rotationAngle / 2);

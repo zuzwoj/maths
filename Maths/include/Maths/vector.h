@@ -17,9 +17,9 @@ public:
 	double x;
 	double y;
 
-	Vector2(double x, double y);
-	Vector2(Vector3 v);
-	Vector2();
+	constexpr Vector2(double x, double y);
+	constexpr Vector2(Vector3& v);
+	constexpr Vector2();
 
 	double len() const override;
 	void normalize() override;
@@ -62,10 +62,10 @@ public:
 	double y;
 	double z;
 
-	Vector3(double x, double y, double z);
-	Vector3(Vector2 v);
-	Vector3(Vector4 v);
-	Vector3();
+	constexpr Vector3(double x, double y, double z);
+	constexpr Vector3(Vector2& v);
+	constexpr Vector3(Vector4& v);
+	constexpr Vector3();
 
 	double len() const override;
 	void normalize() override;
@@ -110,9 +110,9 @@ public:
 	double z;
 	double t;
 
-	Vector4(double x, double y, double z, double t);
-	Vector4(Vector3 v);
-	Vector4();
+	constexpr Vector4(double x, double y, double z, double t);
+	constexpr Vector4(Vector3& v);
+	constexpr Vector4();
 
 	double len() const override;
 	void normalize() override;

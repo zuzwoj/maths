@@ -3,33 +3,10 @@
 /****************************************************
 * CONSTRUCTORS
 ****************************************************/
-Vector3::Vector3(double x, double y, double z)
-{
-	this->x = x;
-	this->y = y;
-	this->z = z;
-}
-
-Vector3::Vector3(Vector2 v)
-{ 
-	this->x = v.x;
-	this->y = v.y;
-	this->z = 0.0f;
-}
-
-Vector3::Vector3(Vector4 v)
-{ 
-	this->x = v.x;
-	this->y = v.y;
-	this->z = v.z;
-}
-
-Vector3::Vector3()
-{
-	this->x = 0.0f;
-	this->y = 0.0f;
-	this->z = 0.0f;
-}
+constexpr Vector3::Vector3(double x, double y, double z) : x(x), y(y), z(z) {}
+constexpr Vector3::Vector3(Vector2& v) : x(v.x), y(v.y), z(0.0f) {}
+constexpr Vector3::Vector3(Vector4& v) : x(v.x), y(v.y), z(v.z) {}
+constexpr Vector3::Vector3() : x(0.0f), y(0.0f), z(0.0f) {}
 
 /****************************************************
 * VECTOR INTERFACE FUNCTIONS
