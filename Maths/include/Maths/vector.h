@@ -18,7 +18,7 @@ public:
 	double y;
 
 	constexpr Vector2(double x, double y);
-	constexpr Vector2(Vector3& v);
+	constexpr Vector2(Vector3 v);
 	constexpr Vector2();
 
 	double len() const override;
@@ -63,8 +63,8 @@ public:
 	double z;
 
 	constexpr Vector3(double x, double y, double z);
-	constexpr Vector3(Vector2& v);
-	constexpr Vector3(Vector4& v);
+	constexpr Vector3(Vector2 v);
+	constexpr Vector3(Vector4 v);
 	constexpr Vector3();
 
 	double len() const override;
@@ -111,7 +111,7 @@ public:
 	double t;
 
 	constexpr Vector4(double x, double y, double z, double t);
-	constexpr Vector4(Vector3& v);
+	constexpr Vector4(Vector3 v);
 	constexpr Vector4();
 
 	double len() const override;

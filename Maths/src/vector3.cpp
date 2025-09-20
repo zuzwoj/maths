@@ -4,8 +4,8 @@
 * CONSTRUCTORS
 ****************************************************/
 constexpr Vector3::Vector3(double x, double y, double z) : x(x), y(y), z(z) {}
-constexpr Vector3::Vector3(Vector2& v) : x(v.x), y(v.y), z(0.0f) {}
-constexpr Vector3::Vector3(Vector4& v) : x(v.x), y(v.y), z(v.z) {}
+constexpr Vector3::Vector3(Vector2 v) : x(v.x), y(v.y), z(0.0f) {}
+constexpr Vector3::Vector3(Vector4 v) : x(v.x), y(v.y), z(v.z) {}
 constexpr Vector3::Vector3() : x(0.0f), y(0.0f), z(0.0f) {}
 
 /****************************************************
