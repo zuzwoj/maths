@@ -60,17 +60,17 @@ Vector3& Vector3::operator-=(const Vector3& rhs)
 
 Vector3 operator+(Vector3 lhs, const Vector3& rhs)
 {
-	lhs.x = rhs.x + lhs.x;
-	lhs.y = rhs.y + lhs.y;
-	lhs.z = rhs.z + lhs.z;
+	lhs.x += rhs.x;
+	lhs.y += rhs.y;
+	lhs.z += rhs.z;
 	return lhs;
 }
 
 Vector3 operator-(Vector3 lhs, const Vector3& rhs)
 {
-	lhs.x = rhs.x - lhs.x;
-	lhs.y = rhs.y - lhs.y;
-	lhs.z = rhs.z - lhs.z;
+	lhs.x += rhs.x;
+	lhs.y += rhs.y;
+	lhs.z += rhs.z;
 	return lhs;
 }
 

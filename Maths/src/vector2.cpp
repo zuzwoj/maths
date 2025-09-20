@@ -51,15 +51,15 @@ Vector2& Vector2::operator-=(const Vector2& rhs)
 
 Vector2 operator+(Vector2 lhs, const Vector2& rhs)
 {
-	lhs.x = rhs.x + lhs.x;
-	lhs.y = rhs.y + lhs.y;
+	lhs.x += rhs.x;
+	lhs.y += rhs.y;
 	return lhs;
 }
 
 Vector2 operator-(Vector2 lhs, const Vector2& rhs)
 {
-	lhs.x = rhs.x - lhs.x;
-	lhs.y = rhs.y - lhs.y;
+	lhs.x -= rhs.x;
+	lhs.y -= rhs.y;
 	return lhs;
 }
 

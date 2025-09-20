@@ -59,19 +59,19 @@ Vector4& Vector4::operator-=(const Vector4& rhs)
 
 Vector4 operator+(Vector4 lhs, const Vector4& rhs)
 {
-	lhs.x = rhs.x + lhs.x;
-	lhs.y = rhs.y + lhs.y;
-	lhs.z = rhs.z + lhs.z;
-	lhs.t = rhs.t + lhs.t;
+	lhs.x += rhs.x;
+	lhs.y += rhs.y;
+	lhs.z += rhs.z;
+	lhs.t += rhs.t;
 	return lhs;
 }
 
 Vector4 operator-(Vector4 lhs, const Vector4& rhs)
 {
-	lhs.x = rhs.x - lhs.x;
-	lhs.y = rhs.y - lhs.y;
-	lhs.z = rhs.z - lhs.z;
-	lhs.t = rhs.t + lhs.t;
+	lhs.x -= rhs.x;
+	lhs.y -= rhs.y;
+	lhs.z -= rhs.z;
+	lhs.t -= rhs.t;
 	return lhs;
 }
 
