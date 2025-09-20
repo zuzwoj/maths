@@ -147,3 +147,16 @@ public:
 	// dot product
 	friend double operator*(Vector4 lhs, const Vector4& rhs);
 };
+
+constexpr Vector2::Vector2(double x, double y) : x(x), y(y) {}
+constexpr Vector2::Vector2(Vector3 v) : x(v.x), y(v.y) {}
+constexpr Vector2::Vector2() : x(0.0f), y(0.0f) {}
+
+constexpr Vector3::Vector3(double x, double y, double z) : x(x), y(y), z(z) {}
+constexpr Vector3::Vector3(Vector2 v) : x(v.x), y(v.y), z(0.0f) {}
+constexpr Vector3::Vector3(Vector4 v) : x(v.x), y(v.y), z(v.z) {}
+constexpr Vector3::Vector3() : x(0.0f), y(0.0f), z(0.0f) {}
+
+constexpr Vector4::Vector4(double x, double y, double z, double t) : x(x), y(y), z(z), t(t) {}
+constexpr Vector4::Vector4(Vector3 v) : x(v.x), y(v.y), z(v.z), t(1.0f) {}
+constexpr Vector4::Vector4() : x(0.0f), y(0.0f), z(0.0f), t(0.0f) {}

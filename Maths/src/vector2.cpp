@@ -1,13 +1,6 @@
 #include "Maths/vector.h"
 
 /****************************************************
-* CONSTRUCTORS
-****************************************************/
-constexpr Vector2::Vector2(double x, double y) : x(x), y(y) {}
-constexpr Vector2::Vector2(Vector3 v) : x(v.x), y(v.y) {}
-constexpr Vector2::Vector2() : x(0.0f), y(0.0f) {}
-
-/****************************************************
 * VECTOR INTERFACE FUNCTIONS
 ****************************************************/
 double Vector2::len() const
