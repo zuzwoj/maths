@@ -15,6 +15,10 @@ public:
 	Quaternion(Vector3 rotationAxis, double rotationAngle);
 	Quaternion(Vector4 xyzw);
 
+	static const Vector3 X_AXIS;
+	static const Vector3 Y_AXIS;
+	static const Vector3 Z_AXIS;
+
 	double getW() { return w; }
 	double getX() { return x; }
 	double getY() { return y; }
@@ -22,7 +26,6 @@ public:
 
 	Matrix4x4 getRotationMatrix();
 	void reset();
-
 
 	Quaternion& operator*=(const Quaternion& rhs);
 	friend Quaternion operator*(Quaternion lhs, const Quaternion& rhs);
