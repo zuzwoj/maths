@@ -20,7 +20,7 @@ add_library(Maths STATIC
     src/translationMatrix.cpp
     src/vector2.cpp
     src/vector3.cpp
-    src/vector4.cpp)
+    src/vector4.cpp "include/Maths/functions.h" "src/functions.cpp")
 
 target_include_directories(Maths
     PUBLIC
