@@ -6,6 +6,7 @@ A simple C++ library created primarily for usage with OpenGL.
 - 2D, 3D and 4D vectors
 - 4x4 matrices
 - quaternions
+- some common mathematical functions
 
 ## Build (Windows)
 From the `Maths` directory execute the following (with `<mode>` being either `Release` or `Debug`)
