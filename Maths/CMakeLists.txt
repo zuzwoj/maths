@@ -5,22 +5,22 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(Maths STATIC
-    src/diagonalMatrix.cpp
-    src/identityMatrix.cpp
-    src/invertedProjectionMatrix.cpp
-    src/matrix4x4.cpp
-    src/projectionMatrix.cpp
+    "src/matrix4x4/diagonalMatrix.cpp"
+    "src/matrix4x4/identityMatrix.cpp"
+    "src/matrix4x4/invertedProjectionMatrix.cpp"
+    "src/matrix4x4/matrix4x4.cpp"
+    "src/matrix4x4/projectionMatrix.cpp"
     src/quaternion.cpp
-    src/rotationMatrix.cpp
-    src/rotationXMatrix.cpp
-    src/rotationYMatrix.cpp
-    src/rotationZMatrix.cpp
-    src/scaleMatrix.cpp
-    src/stereoscopicProjectionMatrix.cpp
-    src/translationMatrix.cpp
+    "src/matrix4x4/rotationMatrix.cpp"
+    
+    
+    
+    "src/matrix4x4/scaleMatrix.cpp"
+    "src/matrix4x4/stereoscopicProjectionMatrix.cpp"
+    "src/matrix4x4/translationMatrix.cpp"
     src/vector2.cpp
     src/vector3.cpp
-    src/vector4.cpp "include/Maths/functions.h" "src/functions.cpp")
+    src/vector4.cpp "include/Maths/functions.h" "src/functions.cpp"      )
 
 target_include_directories(Maths
     PUBLIC

@@ -52,10 +52,10 @@ Matrix4x4 Quaternion::getRotationMatrix()
 
 void Quaternion::reset()
 {
-	this->w = 1.0f;
-	this->x = 0.0f;
-	this->y = 0.0f;
-	this->z = 0.0f;
+	this->w = 1.0;
+	this->x = 0.0;
+	this->y = 0.0;
+	this->z = 0.0;
 }
 
 Quaternion& Quaternion::operator*=(const Quaternion& rhs)

@@ -35,24 +35,90 @@ public:
 	IdentityMatrix();
 };
 
+/****************************************************
+* ROTATION MATRICES
+****************************************************/
 class RotationMatrix : public Matrix4x4
 {
 public:
 	RotationMatrix(double ax, double ay, double az);
 };
 
+class RotationXMatrix : public RotationMatrix
+{
+public:
+	RotationXMatrix(double angle) : RotationMatrix(angle, 0.0, 0.0) {}
+};
+
+class RotationYMatrix : public RotationMatrix
+{
+public:
+	RotationYMatrix(double angle) : RotationMatrix(0.0, angle, 0.0) {}
+};
+
+class RotationZMatrix : public RotationMatrix
+{
+public:
+	RotationZMatrix(double angle) : RotationMatrix(0.0, 0.0, angle) {}
+};
+
+/****************************************************
+* TRANSLATION MATRICES
+****************************************************/
 class TranslationMatrix : public Matrix4x4
 {
 public:
 	TranslationMatrix(double tx, double ty, double tz);
 };
 
+class TranslationXMatrix : public TranslationMatrix
+{
+public:
+	TranslationXMatrix(double offset) : TranslationMatrix(offset, 0.0, 0.0) {}
+};
+
+class TranslationYMatrix : public TranslationMatrix
+{
+public:
+	TranslationYMatrix(double offset) : TranslationMatrix(0.0, offset, 0.0) {}
+};
+
+class TranslationZMatrix : public TranslationMatrix
+{
+public:
+	TranslationZMatrix(double offset) : TranslationMatrix(0.0, 0.0, offset) {}
+};
+
+/****************************************************
+* SCALE MATRICES
+****************************************************/
 class ScaleMatrix : public DiagonalMatrix
 {
 public:
 	ScaleMatrix(double sx, double sy, double sz);
 };
 
+class ScaleXMatrix : public ScaleMatrix
+{
+public:
+	ScaleXMatrix(double scale) : ScaleMatrix(scale, 1.0, 1.0) {}
+};
+
+class ScaleYMatrix : public ScaleMatrix
+{
+public:
+	ScaleYMatrix(double scale) : ScaleMatrix(1.0, scale, 1.0) {}
+};
+
+class ScaleZMatrix : public ScaleMatrix
+{
+public:
+	ScaleZMatrix(double scale) : ScaleMatrix(1.0, 1.0, scale) {}
+};
+
+/****************************************************
+* PROJECTION MATRIX
+****************************************************/
 class ProjectionMatrix : public Matrix4x4
 {
 public:
@@ -69,22 +135,4 @@ class InvertedProjectionMatrix : public Matrix4x4
 {
 public:
 	InvertedProjectionMatrix(double fov, double aspect, double near, double far);
-};
-
-class RotationXMatrix : public Matrix4x4
-{
-public:
-	RotationXMatrix(double angle);
-};
-
-class RotationYMatrix : public Matrix4x4
-{
-public:
-	RotationYMatrix(double angle);
-};
-
-class RotationZMatrix : public Matrix4x4
-{
-public:
-	RotationZMatrix(double angle);
 };

@@ -9,6 +9,6 @@ namespace maths
 
 	double sgn(double arg) 
 	{
-		return arg ? arg / abs(arg) : 0.0f;
+		return arg ? arg / abs(arg) : 0.0;
 	}
 }

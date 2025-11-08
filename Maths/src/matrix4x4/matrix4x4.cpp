@@ -28,7 +28,7 @@ Matrix4x4::Matrix4x4(
 	elems[3][3] = a33;
 }
 
-Matrix4x4::Matrix4x4() : Matrix4x4(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f) {}
+Matrix4x4::Matrix4x4() : Matrix4x4(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0) {}
 
 void Matrix4x4::transpose()
 {
