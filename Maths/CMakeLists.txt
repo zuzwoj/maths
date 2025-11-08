@@ -18,9 +18,9 @@ add_library(Maths STATIC
     "src/matrix4x4/scaleMatrix.cpp"
     "src/matrix4x4/stereoscopicProjectionMatrix.cpp"
     "src/matrix4x4/translationMatrix.cpp"
-    src/vector2.cpp
-    src/vector3.cpp
-    src/vector4.cpp "include/Maths/functions.h" "src/functions.cpp"      )
+    "src/vector/vector2.cpp"
+    "src/vector/vector3.cpp"
+    "src/vector/vector4.cpp" "include/Maths/functions.h" "src/functions.cpp"       "include/Maths/matrix3x3.h" "include/Maths/matrix.h" "src/matrix3x3.cpp")
 
 target_include_directories(Maths
     PUBLIC

@@ -1,8 +1,9 @@
 #pragma once
+#include "matrix.h"
 #include "vector.h"
 #include <algorithm>
 
-class Matrix4x4
+class Matrix4x4 : public Matrix
 {
 protected:
 	double elems[4][4];
@@ -14,9 +15,9 @@ public:
 		double a30, double a31, double a32, double a33);
 	Matrix4x4();
 
-	void transpose();
-	void toArray(double* out);
-	void toFloatArray(float* out);
+	void transpose() override;
+	void toArray(double* out) override;
+	void toFloatArray(float* out) override;
 	void override(Matrix4x4 source);
 
 	friend Matrix4x4 operator*(Matrix4x4 lhs, const Matrix4x4& rhs);
