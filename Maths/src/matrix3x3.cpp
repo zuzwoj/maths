@@ -75,6 +75,31 @@ Matrix3x3 operator*(Matrix3x3 lhs, const Matrix3x3& rhs)
 	return result;
 }
 
+Matrix3x3 operator*(Matrix3x3 lhs, const double& rhs)
+{
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < 3; ++j)
+		{
+			lhs.elems[i][j] *= rhs;
+		}
+	}
+	return lhs;
+}
+
+Matrix3x3 operator*(double lhs, const Matrix3x3& rhs)
+{
+	Matrix3x3 result;
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < 3; ++j)
+		{
+			result.elems[i][j] = rhs.elems[i][j] * lhs;
+		}
+	}
+	return result;
+}
+
 Vector3 operator*(Matrix3x3 lhs, const Vector3& rhs)
 {
 	return Vector3(

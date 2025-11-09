@@ -20,5 +20,7 @@ public:
 	void override(Matrix3x3 source);
 
 	friend Matrix3x3 operator*(Matrix3x3 lhs, const Matrix3x3& rhs);
+	friend Matrix3x3 operator*(Matrix3x3 lhs, const double& rhs);
+	friend Matrix3x3 operator*(double lhs, const Matrix3x3& rhs);
 	friend Vector3 operator*(Matrix3x3 lhs, const Vector3& rhs);
 };

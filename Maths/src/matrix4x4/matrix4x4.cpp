@@ -90,6 +90,31 @@ Matrix4x4 operator*(Matrix4x4 lhs, const Matrix4x4& rhs)
 	return result;
 }
 
+Matrix4x4 operator*(Matrix4x4 lhs, const double& rhs)
+{
+	for (int i = 0; i < 4; ++i)
+	{
+		for (int j = 0; j < 4; ++j)
+		{
+			lhs.elems[i][j] *= rhs;
+		}
+	}
+	return lhs;
+}
+
+Matrix4x4 operator*(double lhs, const Matrix4x4& rhs)
+{
+	Matrix4x4 result;
+	for (int i = 0; i < 4; ++i)
+	{
+		for (int j = 0; j < 4; ++j)
+		{
+			result.elems[i][j] = rhs.elems[i][j] * lhs;
+		}
+	}
+	return result;
+}
+
 Vector4 operator*(Matrix4x4 lhs, const Vector4& rhs)
 {
 	return Vector4(
