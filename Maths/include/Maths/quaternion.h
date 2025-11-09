@@ -12,8 +12,9 @@ private:
 	void override(Quaternion q);
 
 public:
-	Quaternion(Vector3 rotationAxis, double rotationAngle);
+	Quaternion(Vector3 rotationAxis, double rotationAngle = 0);
 	Quaternion(Vector4 xyzw);
+	Quaternion(double x, double y, double z, double w);
 
 	double getW() { return w; }
 	double getX() { return x; }
