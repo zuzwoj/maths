@@ -1,6 +1,6 @@
 # Maths
 
-A simple C++ library with mathematical structures, mainly matrices and vectors.
+A simple C++ library with mathematical structures, mainly matrices, vectors and quaternions.
 
 ## Features
 - 2D, 3D and 4D vectors
