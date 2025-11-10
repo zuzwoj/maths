@@ -45,6 +45,7 @@ class RotationMatrix : public Matrix4x4
 {
 public:
 	RotationMatrix(double ax, double ay, double az);
+	RotationMatrix(Vector3 axyz) : RotationMatrix(axyz.x, axyz.y, axyz.z) {}
 };
 
 class RotationXMatrix : public RotationMatrix
@@ -72,6 +73,7 @@ class TranslationMatrix : public Matrix4x4
 {
 public:
 	TranslationMatrix(double tx, double ty, double tz);
+	TranslationMatrix(Vector3 txyz) : TranslationMatrix(txyz.x, txyz.y, txyz.z) {}
 };
 
 class TranslationXMatrix : public TranslationMatrix
@@ -99,6 +101,7 @@ class ScaleMatrix : public DiagonalMatrix
 {
 public:
 	ScaleMatrix(double sx, double sy, double sz);
+	ScaleMatrix(Vector3 sxyz) : ScaleMatrix(sxyz.x, sxyz.y, sxyz.z) {}
 };
 
 class ScaleXMatrix : public ScaleMatrix
