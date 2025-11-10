@@ -1,6 +1,6 @@
 # Maths
 
-A simple C++ library created primarily for usage with OpenGL.
+A simple C++ library with mathematical structures, mainly matrices and vectors.
 
 ## Features
 - 2D, 3D and 4D vectors
