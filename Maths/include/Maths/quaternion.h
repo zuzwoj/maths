@@ -15,7 +15,7 @@ public:
 	Quaternion(Vector3 rotationAxis, double rotationAngle = 0);
 	Quaternion(Vector4 xyzw);
 	Quaternion(double x, double y, double z, double w);
-	Quaternion() {}
+	Quaternion() : x(0.0), y(0.0), z(0.0), w(0.0) {}
 
 	double getW() { return w; }
 	double getX() { return x; }
