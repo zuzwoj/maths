@@ -16,6 +16,7 @@ public:
 	Matrix4x4();
 
 	void transpose() override;
+	Matrix4x4 getTransposed();
 	void toArray(double* out) override;
 	void toFloatArray(float* out) override;
 	void override(Matrix4x4 source);

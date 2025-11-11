@@ -32,12 +32,23 @@ Matrix4x4::Matrix4x4() : Matrix4x4(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 
 
 void Matrix4x4::transpose()
 {
-	std::swap(elems[0][1], elems[1][0]);
-	std::swap(elems[0][2], elems[2][0]);
-	std::swap(elems[0][3], elems[3][0]);
-	std::swap(elems[1][2], elems[2][1]);
-	std::swap(elems[1][3], elems[3][1]);
-	std::swap(elems[2][3], elems[3][2]);
+	for (int i = 0; i < 4; ++i)
+	{
+		for (int j = 0; j < i; ++j)
+		{
+			std::swap(elems[i][j], elems[j][i]);
+		}
+	}
+}
+
+Matrix4x4 Matrix4x4::getTransposed()
+{
+	return Matrix4x4(
+		elems[0][0], elems[1][0], elems[2][0], elems[3][0],
+		elems[0][1], elems[1][1], elems[2][1], elems[3][1],
+		elems[0][2], elems[1][2], elems[2][2], elems[3][2],
+		elems[0][3], elems[1][3], elems[2][3], elems[3][3]
+	);
 }
 
 void Matrix4x4::toArray(double* out)

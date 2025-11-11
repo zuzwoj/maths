@@ -21,9 +21,22 @@ Matrix3x3::Matrix3x3() : Matrix3x3(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0) 
 
 void Matrix3x3::transpose()
 {
-	std::swap(elems[0][1], elems[1][0]);
-	std::swap(elems[0][2], elems[2][0]);
-	std::swap(elems[1][2], elems[2][1]);
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < i; ++j)
+		{
+			std::swap(elems[i][j], elems[j][i]);
+		}
+	}
+}
+
+Matrix3x3 Matrix3x3::getTransposed()
+{
+	return Matrix3x3(
+		elems[0][0], elems[1][0], elems[2][0],
+		elems[0][1], elems[1][1], elems[2][1],
+		elems[0][2], elems[1][2], elems[2][2]
+	);
 }
 
 void Matrix3x3::toArray(double* out)

@@ -15,6 +15,7 @@ public:
 	Matrix3x3();
 
 	void transpose() override;
+	Matrix3x3 getTransposed();
 	void toArray(double* out) override;
 	void toFloatArray(float* out) override;
 	void override(Matrix3x3 source);
