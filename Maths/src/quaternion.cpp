@@ -45,10 +45,19 @@ void Quaternion::override(Quaternion q)
 Matrix4x4 Quaternion::getRotationMatrix()
 {
 	return Matrix4x4(
-		1.0f - 2.0f * (y * y + z * z), 2.0f * (x * y - z * w), 2.0f * (x * z + y * w), 0.0f,
-		2.0f * (x * y + z * w), 1.0f - 2.0f * (x * x + z * z), 2.0f * (y * z - x * w), 0.0f,
-		2.0f * (x * z - y * w), 2.0f * (y * z + x * w), 1.0f - 2.0f * (x * x + y * y), 0.0f,
-		0.0f, 0.0f, 0.0f, 1.0f
+		1.0 - 2.0 * (y * y + z * z), 2.0 * (x * y - z * w),       2.0 * (x * z + y * w),       0.0,
+		2.0 * (x * y + z * w),       1.0 - 2.0 * (x * x + z * z), 2.0 * (y * z - x * w),       0.0,
+		2.0 * (x * z - y * w),       2.0 * (y * z + x * w),       1.0 - 2.0 * (x * x + y * y), 0.0,
+		0.0,                         0.0,                         0.0,                         1.0
+	);
+}
+
+Matrix3x3 Quaternion::getRotationMatrix3x3()
+{
+	return Matrix3x3(
+		1.0 - 2.0 * (y * y + z * z), 2.0 * (x * y - z * w),       2.0 * (x * z + y * w),
+		2.0 * (x * y + z * w),       1.0 - 2.0 * (x * x + z * z), 2.0 * (y * z - x * w),
+		2.0 * (x * z - y * w),       2.0 * (y * z + x * w),       1.0 - 2.0 * (x * x + y * y)
 	);
 }
 

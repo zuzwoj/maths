@@ -1,6 +1,7 @@
 #pragma once
 #include "vector.h"
 #include "matrix4x4.h"
+#include "matrix3x3.h"
 
 class Quaternion
 {
@@ -23,6 +24,7 @@ public:
 	double getZ() { return z; }
 
 	Matrix4x4 getRotationMatrix();
+	Matrix3x3 getRotationMatrix3x3();
 	void reset();
 
 	Quaternion& operator*=(const Quaternion& rhs);
