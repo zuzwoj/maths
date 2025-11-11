@@ -25,6 +25,7 @@ public:
 
 	Matrix4x4 getRotationMatrix();
 	Matrix3x3 getRotationMatrix3x3();
+	Vector4 toVector() { return Vector4(w, x, y, z); }
 	void reset();
 
 	Quaternion& operator*=(const Quaternion& rhs);
