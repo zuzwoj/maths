@@ -16,6 +16,7 @@ Quaternion::Quaternion(double x, double y, double z, double w)
 	this->y = y;
 	this->z = z;
 	this->w = w;
+	normalize();
 }
 
 double Quaternion::len() const
