@@ -9,7 +9,6 @@ private:
 	double w, x, y, z;
 
 	double len() const;
-	void normalize();
 	void override(Quaternion q);
 
 public:
@@ -27,6 +26,7 @@ public:
 	Matrix3x3 getRotationMatrix3x3();
 	Vector4 toVector() { return Vector4(w, x, y, z); }
 	void reset();
+	void normalize();
 
 	Quaternion& operator*=(const Quaternion& rhs);
 	friend Quaternion operator*(Quaternion lhs, const Quaternion& rhs);

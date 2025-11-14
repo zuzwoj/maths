@@ -13,7 +13,7 @@ From the `Maths` directory execute the following (with `<mode>` being either `Re
 ```
 mkdir build
 cd build
-cmake .. -G "Visual Studio 17 2022" -A x64
+cmake .. -G "Visual Studio 18 2026" -A x64
 cmake --build . --config <mode>
 ``` 
 This will generate `Maths.lib` file under `Maths\build\<mode>` that can then be used with the .h files from `Maths\include\Maths`.
