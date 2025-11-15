@@ -8,19 +8,19 @@ Quaternion::Quaternion(Vector3 rotationAxis, double rotationAngle)
 	this->z = rotationAxis.z * sin(rotationAngle / 2);
 }
 
-Quaternion::Quaternion(Vector4 xyzw) : Quaternion(xyzw.x, xyzw.y, xyzw.z, xyzw.t) {}
+Quaternion::Quaternion(Vector4 wxyz) : Quaternion(wxyz.x, wxyz.y, wxyz.z, wxyz.t) {}
 
-Quaternion::Quaternion(double x, double y, double z, double w)
+Quaternion::Quaternion(double w, double x, double y, double z)
 {
+	this->w = w;
 	this->x = x;
 	this->y = y;
 	this->z = z;
-	this->w = w;
 }
 
 double Quaternion::len() const
 {
-	return sqrt(x * x + y * y + z * z + w * w);
+	return sqrt(w * w + x * x + y * y + z * z);
 }
 
 void Quaternion::normalize()
@@ -36,10 +36,10 @@ void Quaternion::normalize()
 }
 void Quaternion::override(Quaternion q)
 {
+	w = q.w;
 	x = q.x;
 	y = q.y;
 	z = q.z;
-	w = q.w;
 }
 
 Matrix4x4 Quaternion::getRotationMatrix()

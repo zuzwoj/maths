@@ -13,9 +13,9 @@ private:
 
 public:
 	Quaternion(Vector3 rotationAxis, double rotationAngle = 0);
-	Quaternion(Vector4 xyzw);
-	Quaternion(double x, double y, double z, double w);
-	Quaternion() : x(0.0), y(0.0), z(0.0), w(0.0) {}
+	Quaternion(Vector4 wxyz);
+	Quaternion(double w, double x, double y, double z);
+	Quaternion() : w(0.0), x(0.0), y(0.0), z(0.0) {}
 
 	double getW() { return w; }
 	double getX() { return x; }
