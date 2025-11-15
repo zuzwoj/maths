@@ -28,6 +28,8 @@ public:
 	void reset();
 	void normalize();
 
+	static Quaternion multiplyWithoutNormalization(const Quaternion& lhs, const Quaternion& rhs);
+
 	Quaternion& operator*=(const Quaternion& rhs);
 	friend Quaternion operator*(Quaternion lhs, const Quaternion& rhs);
 };

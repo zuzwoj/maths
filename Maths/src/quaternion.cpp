@@ -69,6 +69,16 @@ void Quaternion::reset()
 	this->z = 0.0;
 }
 
+Quaternion Quaternion::multiplyWithoutNormalization(const Quaternion& lhs, const Quaternion& rhs)
+{
+	return Quaternion(Vector4(
+		lhs.w * rhs.w - lhs.x * rhs.x - lhs.y * rhs.y - lhs.z * rhs.z,
+		lhs.w * rhs.x + lhs.x * rhs.w + lhs.y * rhs.z - lhs.z * rhs.y,
+		lhs.w * rhs.y - lhs.x * rhs.z + lhs.y * rhs.w + lhs.z * rhs.x,
+		lhs.w * rhs.z + lhs.x * rhs.y - lhs.y * rhs.x + lhs.z * rhs.w
+	));
+}
+
 Quaternion& Quaternion::operator*=(const Quaternion& rhs)
 {
 	*this = *this * rhs;
@@ -77,12 +87,7 @@ Quaternion& Quaternion::operator*=(const Quaternion& rhs)
 
 Quaternion operator*(Quaternion lhs, const Quaternion& rhs)
 {
-	Quaternion result = Quaternion(Vector4(
-		lhs.w * rhs.w - lhs.x * rhs.x - lhs.y * rhs.y - lhs.z * rhs.z,
-		lhs.w * rhs.x + lhs.x * rhs.w + lhs.y * rhs.z - lhs.z * rhs.y,
-		lhs.w * rhs.y - lhs.x * rhs.z + lhs.y * rhs.w + lhs.z * rhs.x,
-		lhs.w * rhs.z + lhs.x * rhs.y - lhs.y * rhs.x + lhs.z * rhs.w
-	));
+	Quaternion result = Quaternion::multiplyWithoutNormalization(lhs, rhs);
 	result.normalize();
 	return result;
 }
