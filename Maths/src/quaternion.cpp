@@ -63,10 +63,17 @@ Matrix3x3 Quaternion::getRotationMatrix3x3()
 
 void Quaternion::reset()
 {
-	this->w = 1.0;
-	this->x = 0.0;
-	this->y = 0.0;
-	this->z = 0.0;
+	w = 1.0;
+	x = 0.0;
+	y = 0.0;
+	z = 0.0;
+}
+
+void Quaternion::invert()
+{
+	x = -x;
+	y = -y;
+	z = -z;
 }
 
 Quaternion Quaternion::multiplyWithoutNormalization(const Quaternion& lhs, const Quaternion& rhs)
@@ -90,4 +97,14 @@ Quaternion operator*(Quaternion lhs, const Quaternion& rhs)
 	Quaternion result = Quaternion::multiplyWithoutNormalization(lhs, rhs);
 	result.normalize();
 	return result;
+}
+
+Vector3 operator*(Quaternion lhs, const Vector3& rhs)
+{
+	lhs.normalize();
+	Quaternion vector = Quaternion(0.0, rhs.x, rhs.y, rhs.z);
+	vector = Quaternion::multiplyWithoutNormalization(lhs, vector);
+	lhs.invert();
+	vector = Quaternion::multiplyWithoutNormalization(vector, lhs);
+	return Vector3(vector.x, vector.y, vector.z);
 }

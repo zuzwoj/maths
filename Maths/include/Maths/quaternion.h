@@ -27,9 +27,11 @@ public:
 	Vector4 toVector() { return Vector4(w, x, y, z); }
 	void reset();
 	void normalize();
+	void invert();
 
 	static Quaternion multiplyWithoutNormalization(const Quaternion& lhs, const Quaternion& rhs);
 
 	Quaternion& operator*=(const Quaternion& rhs);
 	friend Quaternion operator*(Quaternion lhs, const Quaternion& rhs);
+	friend Vector3 operator*(Quaternion lhs, const Vector3& rhs);
 };
