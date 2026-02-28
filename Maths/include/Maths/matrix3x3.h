@@ -19,6 +19,7 @@ public:
 	void toArray(double* out) override;
 	void toFloatArray(float* out) override;
 	void override(Matrix3x3 source);
+	double at(unsigned int row, unsigned int column);
 
 	friend Matrix3x3 operator*(Matrix3x3 lhs, const Matrix3x3& rhs);
 	friend Matrix3x3 operator*(Matrix3x3 lhs, const double& rhs);

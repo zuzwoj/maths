@@ -20,6 +20,7 @@ public:
 	void toArray(double* out) override;
 	void toFloatArray(float* out) override;
 	void override(Matrix4x4 source);
+	double at(unsigned int row, unsigned int column);
 
 	friend Matrix4x4 operator*(Matrix4x4 lhs, const Matrix4x4& rhs);
 	friend Matrix4x4 operator*(Matrix4x4 lhs, const double& rhs);

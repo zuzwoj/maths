@@ -1,5 +1,7 @@
 #include "Maths/matrix4x4.h"
 #include <cmath>
+#include <stdexcept>
+#include <string>
 
 Matrix4x4::Matrix4x4(
 	double a00, double a01, double a02, double a03,
@@ -82,6 +84,15 @@ void Matrix4x4::override(Matrix4x4 source)
 			elems[i][j] = source.elems[i][j];
 		}
 	}
+}
+
+double Matrix4x4::at(unsigned int row, unsigned int column)
+{
+	if (row >= 4 || column >= 4)
+	{
+		throw std::invalid_argument("trying to obtain a value of index (" + std::to_string(row) + ", " + std::to_string(column) + ") from Matrix4x4");
+	}
+	return elems[row][column];
 }
 
 Matrix4x4 operator*(Matrix4x4 lhs, const Matrix4x4& rhs)

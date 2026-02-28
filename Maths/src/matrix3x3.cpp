@@ -1,4 +1,6 @@
 #include "Maths/matrix3x3.h"
+#include <stdexcept>
+#include <string>
 
 Matrix3x3::Matrix3x3(double a00, double a01, double a02,
 	double a10, double a11, double a12,
@@ -70,6 +72,15 @@ void Matrix3x3::override(Matrix3x3 source)
 			elems[i][j] = source.elems[i][j];
 		}
 	}
+}
+
+double Matrix3x3::at(unsigned int row, unsigned int column)
+{
+	if (row >= 3 || column >= 3)
+	{
+		throw std::invalid_argument("trying to obtain a value of index (" + std::to_string(row) + ", " + std::to_string(column) + ") from Matrix3x3");
+	}
+	return elems[row][column];
 }
 
 Matrix3x3 operator*(Matrix3x3 lhs, const Matrix3x3& rhs)
